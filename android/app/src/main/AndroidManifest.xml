@@ -2,6 +2,9 @@
   package="com.trackerreactnativeapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
 
     <application
       android:name=".MainApplication"
@@ -22,6 +25,14 @@
         </intent-filter>
       </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+        <service
+            android:name=".TrackerJob"
+            android:enabled="true"
+            android:exported="false">
+        </service>
+        <service
+            android:name=".TrackerEventService">
+        </service>
     </application>
 
 </manifest>
